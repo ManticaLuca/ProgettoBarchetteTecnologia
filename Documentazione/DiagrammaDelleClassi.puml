@@ -1,0 +1,53 @@
+@startuml
+class ThInput{
+    -float x
+    -float y
+    
+    +void run()
+}
+class DatiCondivisi{
+    -float accellerometroX
+    -float accellerometroY
+    -int numVasche
+    -int numBarche
+    
+    +float getX()
+    +float getY()
+    +int getNumVasche()
+    +int getNumBarche()
+}
+
+class Vasca {
+    -Acqua acqua
+    -Barca barca
+    -int profondit‡
+
+    +void aggiornaDistribuzione(float inclinazioneX, float inclinazioneY)
+    +void aggiornaPosBarca(float velocit‡Acqua)
+    +void visualizzaVasca()
+    +void simulazioneMovimento()
+    +void disegna()
+}
+
+class Acqua {
+    -double altezza
+    -Rgb colore
+
+    +void aggiorna(float inclinazione, float inclinazioneY)
+    +void disegna()
+}
+
+class Barca {
+    -float x
+    -float y
+
+    +void muovi(float inclinazione, float inclinazioneY)
+    +void disegna()
+}
+DatiCondivisi -- ThInput
+Vasca -- DatiCondivisi
+Acqua -- DatiCondivisi
+Barca -- DatiCondivisi
+Vasca -- Barca
+Vasca -- Acqua
+@enduml
