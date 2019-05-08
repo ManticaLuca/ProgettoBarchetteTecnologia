@@ -68,9 +68,33 @@ public class Vasca {
         barca.mostraBarca();
     }
 
-    public void spostaAcqua(float altezza, Vasca altra) {
-        Acqua.diminuisciQuantità(altezza);
+    public void spostaAcquaInAltraVasca(float altezza, Vasca altra) {
         altra.acqua.aumentaQuantità(altezza);
+        acqua.diminuisciQuantità(altezza);
+    }
+
+    public Acqua getAcqua() {
+        return acqua;
+    }
+
+    public Box getDimensione() {
+        return dimensione;
+    }
+
+    public Barca getPallina() {
+        return barca;
+    }
+
+    public Point getPosizione() {
+        return posizione;
+    }
+
+    public float getInclinazioneX() {
+        return inclinazioneX;
+    }
+
+    public float getInclinazioneY() {
+        return inclinazioneY;
     }
 
     void aggiornaPosBarca(Barca barca, float newX, float newY) {
@@ -78,6 +102,33 @@ public class Vasca {
     }
 
     void draw() {
+        processingSketch.fill(processingSketch.color(240, 0, 0));
+        processingSketch.rect(posizione.x, posizione.y, (float) dimensione.getWidth(), (float) dimensione.getDepth());
 
+        barca.draw();
+
+        processingSketch.noFill();
+        processingSketch.stroke(0, 0, 0);
+        processingSketch.rect(posizione.x, posizione.y, (float) dimensione.getWidth(), (float) dimensione.getDepth());
+    }
+    
+    public Directions isPallinaControBordi() {
+        if (pallina.getPosizione().x > dimensioni.getWidth())
+            return Directions.DESTRA;
+        else if (pallina.getPosizione().x < 0)
+            return Directions.SINISTRA;
+        else if (pallina.getPosizione().y < 0)
+            return Directions.SOPRA;
+        else if (pallina.getPosizione().y > dimensioni.getDepth())
+            return Directions.SOTTO;
+        return Directions.NONE;
+    }
+
+    public void setInclinazioneX(float inclinazioneX) {
+        this.inclinazioneX = inclinazioneX;
+    }
+
+    public void setInclinazioneY(float inclinazioneY) {
+        this.inclinazioneY = inclinazioneY;
     }
 }
