@@ -11,7 +11,10 @@ package barcaNellaVasca;
  */
 public class Acqua {
 
-    public Acqua() {
+    float quantità;
+
+    public Acqua(float quantità) {
+        this.quantità = quantità;
     }
-    
+
 }
