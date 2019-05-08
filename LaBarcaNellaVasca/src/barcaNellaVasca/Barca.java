@@ -19,7 +19,7 @@ public class Barca {
 
     private Point posizione;
     private float dimensioni;
-    
+
     private Point posScatola; //angolo sx scatola
     private boolean presente;
 
@@ -38,31 +38,39 @@ public class Barca {
         this.posScatola = posScatola;
         reset();
     }
+
     public void reset() {
-        presente = false; 
+        presente = false;
         dimensioni = 10.0f;
         posizione = new Point();
-        colore = new Color(0,0, 240);
-        
+        colore = new Color(0, 0, 240);
+
     }
+
     public void draw() {
         if (presente) {
             processingSketch.fill(colore.getRGB());
             processingSketch.ellipse(posizione.x + posScatola.x, posizione.y + posScatola.y, dimensioni, dimensioni);
         }
     }
+
     public void mostraBarca() { //Viene aggiunta la pallina
         presente = true;
     }
-    public void nascondiBarca() { 
+
+    public void nascondiBarca() {
         presente = true;
     }
-    
-    public void spostamentoX(int x){
+
+    public void spostamentoX(int x) {
         posizione.x = x;
     }
-    
-    public void spostamentoY(int y){
+
+    public void spostamentoY(int y) {
         posizione.y = y;
+    }
+
+    Point getPosizione() {
+        return posizione;
     }
 }
