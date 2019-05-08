@@ -58,4 +58,12 @@ public class Barca {
     public void nascondiBarca() { 
         presente = true;
     }
+    
+    public void spostamentoX(int x){
+        posizione.x = x;
+    }
+    
+    public void spostamentoY(int y){
+        posizione.y = y;
+    }
 }

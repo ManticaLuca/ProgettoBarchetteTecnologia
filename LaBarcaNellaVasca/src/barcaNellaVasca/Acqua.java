@@ -13,6 +13,9 @@ public class Acqua {
 
     float quantità;
 
+    public Acqua() {
+    }
+
     public Acqua(float quantità) {
         this.quantità = quantità;
     }

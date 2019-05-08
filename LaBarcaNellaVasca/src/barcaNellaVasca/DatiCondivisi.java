@@ -7,11 +7,37 @@ package barcaNellaVasca;
 
 /**
  *
- * @author Rairokul
+ * @author Davide Mauri
  */
 public class DatiCondivisi {
-
-    public DatiCondivisi() {
+    private Barca barca;
+    private int inclinazioneX;
+    private int inclinazioneY;
+    
+    public DatiCondivisi(Barca b1){
+        barca = b1;
+        inclinazioneX = 0;
+        inclinazioneY = 0;
     }
     
+    public void incrementaInclinazioneX(){
+        inclinazioneX++;
+        barca.spostamentoX(inclinazioneX);
+    }
+    
+    public void decrementaInclinazioneX(){
+        inclinazioneX--;
+        barca.spostamentoX(inclinazioneX);        
+    }
+    
+    public void incrementaInclinazioneY(){
+        inclinazioneY++;
+        barca.spostamentoY(inclinazioneY);
+        
+    }
+    
+    public void decrementaInclinazioneY(){
+        inclinazioneY--;
+        barca.spostamentoY(inclinazioneY);
+    }
 }
