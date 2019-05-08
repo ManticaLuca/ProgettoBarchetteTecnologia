@@ -1,23 +1,41 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * La classe gestisce l'acqua
  */
 package barcaNellaVasca;
 
 /**
  *
- * @author Rairokul
+ * @author Mantica Luca
  */
 public class Acqua {
 
-    float quantità;
+    float altezza;
+    //questo si vede dopo come fare....
+    String colore;
 
     public Acqua() {
     }
 
-    public Acqua(float quantità) {
-        this.quantità = quantità;
+    public Acqua(float altezza) {
+        this.altezza = altezza;
     }
 
+    public float getAltezza() {
+        return altezza;
+    }
+
+    public void setAltezza(float altezza) {
+        this.altezza = altezza;
+    }
+
+    public String getColore() {
+        return colore;
+    }
+
+    public void setColore(String colore) {
+        this.colore = colore;
+    }
+
+    void disegna() {
+    }
 }
