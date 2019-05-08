@@ -4,11 +4,14 @@
  * and open the template in the editor.
  */
 package barcaNellaVasca;
-import processing.core.PApplet;
+
 /**
  *
  * @author Rairokul
  */
-public class Main {
+public class DatiCondivisi {
+
+    public DatiCondivisi() {
+    }
     
 }
