@@ -36,15 +36,6 @@ public class Barca {
 
         this.processingSketch = processingSketch;
         this.posScatola = posScatola;
-        reset();
-    }
-
-    public void reset() {
-        presente = false;
-        dimensioni = 10.0f;
-        posizione = new Point();
-        colore = new Color(0, 0, 240);
-
     }
 
     public void draw() {
@@ -54,7 +45,7 @@ public class Barca {
         }
     }
 
-    public void mostraBarca() { //Viene aggiunta la pallina
+    public void mostraBarca() {
         presente = true;
     }
 

@@ -111,18 +111,6 @@ public class Vasca {
         processingSketch.stroke(0, 0, 0);
         processingSketch.rect(posizione.x, posizione.y, (float) dimensione.getWidth(), (float) dimensione.getDepth());
     }
-    
-    public Directions isPallinaControBordi() {
-        if (barca.getPosizione().x > dimensione.getWidth())
-            return Directions.DESTRA;
-        else if (barca.getPosizione().x < 0)
-            return Directions.SINISTRA;
-        else if (barca.getPosizione().y < 0)
-            return Directions.SOPRA;
-        else if (barca.getPosizione().y > dimensione.getDepth())
-            return Directions.SOTTO;
-        return Directions.NONE;
-    }
 
     public void setInclinazioneX(float inclinazioneX) {
         this.inclinazioneX = inclinazioneX;
