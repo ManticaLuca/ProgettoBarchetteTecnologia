@@ -3,6 +3,8 @@
  */
 package barcaNellaVasca;
 
+import java.awt.Color;
+
 /**
  *
  * @author Mantica Luca
@@ -11,7 +13,7 @@ public class Acqua {
 
     float altezza;
     //questo si vede dopo come fare....
-    String colore;
+    Color colore;
 
     public Acqua() {
     }
@@ -28,14 +30,22 @@ public class Acqua {
         this.altezza = altezza;
     }
 
-    public String getColore() {
+    public Color getColore() {
         return colore;
     }
 
-    public void setColore(String colore) {
+    public void setColore(Color colore) {
         this.colore = colore;
     }
 
     void disegna() {
+    }
+
+    void aumentaQuantità(float altezzaAltra) {
+        altezza += altezzaAltra;
+    }
+
+    void diminuisciQuantità(float altezzaAltra) {
+        altezza -= altezzaAltra;
     }
 }
