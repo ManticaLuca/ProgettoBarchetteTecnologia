@@ -113,13 +113,13 @@ public class Vasca {
     }
     
     public Directions isPallinaControBordi() {
-        if (pallina.getPosizione().x > dimensioni.getWidth())
+        if (barca.getPosizione().x > dimensione.getWidth())
             return Directions.DESTRA;
-        else if (pallina.getPosizione().x < 0)
+        else if (barca.getPosizione().x < 0)
             return Directions.SINISTRA;
-        else if (pallina.getPosizione().y < 0)
+        else if (barca.getPosizione().y < 0)
             return Directions.SOPRA;
-        else if (pallina.getPosizione().y > dimensioni.getDepth())
+        else if (barca.getPosizione().y > dimensione.getDepth())
             return Directions.SOTTO;
         return Directions.NONE;
     }
