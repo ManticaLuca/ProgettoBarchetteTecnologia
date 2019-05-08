@@ -46,7 +46,6 @@ public class Barca {
         
     }
     public void draw() {
-
         if (presente) {
             processingSketch.fill(colore.getRGB());
             processingSketch.ellipse(posizione.x + posScatola.x, posizione.y + posScatola.y, dimensioni, dimensioni);
