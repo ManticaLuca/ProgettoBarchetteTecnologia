@@ -20,4 +20,12 @@ public class Acqua {
         this.quantità = quantità;
     }
 
+    public void aumentaQuantità(float altezza) {
+        quantità += altezza;
+    }
+    
+    public void diminuisciQuantità(float altezza) {
+        quantità -= altezza;
+    }
+
 }
