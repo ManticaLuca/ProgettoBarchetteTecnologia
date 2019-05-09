@@ -11,9 +11,8 @@ import java.awt.Color;
  */
 public class Acqua {
 
-    float altezza;
-    //questo si vede dopo come fare....
-    Color colore;
+    private float altezza;
+    private Color colore;
 
     public Acqua() {
     }
