@@ -37,14 +37,14 @@ public class Acqua {
         this.colore = colore;
     }
 
-    void disegna() {
+    public void disegna() {
     }
 
-    void aumentaQuantità(float altezzaAltra) {
-        altezza += altezzaAltra;
+    public void aumentaAltezza(float ofAltezza) {
+        altezza += ofAltezza;
     }
 
-    void diminuisciQuantità(float altezzaAltra) {
-        altezza -= altezzaAltra;
+    public void diminuisciAltezza(float ofAltezza) {
+        altezza -= ofAltezza;
     }
 }
