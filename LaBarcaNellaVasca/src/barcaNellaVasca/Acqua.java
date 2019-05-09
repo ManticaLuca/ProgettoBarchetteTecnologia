@@ -45,6 +45,8 @@ public class Acqua {
     }
 
     public void diminuisciAltezza(float ofAltezza) {
-        altezza -= ofAltezza;
+        if (altezza - ofAltezza > 0) {
+            altezza -= ofAltezza;
+        }
     }
 }
