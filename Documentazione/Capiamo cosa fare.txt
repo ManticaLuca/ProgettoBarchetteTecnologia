@@ -1,0 +1,75 @@
+barca 
+	-4 punti x e y
+	-velocita
+	-DatiCondivisi d
+	
+	+barca(float[] punty, float[] puntx)
+	+MoveAsseX(){
+		for(int i=0; i< puntiX.length; i++)[
+			puntiX[i] += d.inclinazioneX;
+		}	
+	}
+	+MoveAsseY(){
+		for(int i=0; i< puntiY.length; i++)[
+			puntiY[i] += d.inclinazioneY;
+		}	
+	}
+
+	+Move(){
+		MoveAsseY();
+		MoveAsseX();
+	}
+
+	
+acqua
+	-gocce = 255;
+	-color rgb;
+	-datiCondivisi d
+	
+	public acqua(){
+		rgb[0] = 0
+		rgb[1] = 0
+		rgb[2] = 255
+	}
+	
+	+aggiornaColore(){
+		rgb[0] = gocce;
+		rgb[1] = gocce;	
+	}			
+
+	+aumentaGocce(){
+		
+	}
+
+
+
+dati condivisi{
+	-float inclinazione x
+	-float inclinazione y
+
+	+void aumentaX(){
+		x++;
+	}
+	+void aumentaY(){
+		y++
+	}
+
+	+get;set inclinazione
+
+vasca
+	-acqua
+	-altezza
+	quantitaAcqua
+	coloreAcqua -> chiaro:scuro	
+
+thBarchetta
+	Barca barca
+	DatiCondivisi d;
+
+	run : aggiornaPosizione(){
+		barca.move();
+	}
+
+	 	
+
+	
