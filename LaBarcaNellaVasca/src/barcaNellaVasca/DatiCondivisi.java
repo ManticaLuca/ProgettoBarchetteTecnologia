@@ -11,6 +11,7 @@ package barcaNellaVasca;
  */
 public class DatiCondivisi {
     private Barca barca;
+    private float velocitaBarca;
     private int inclinazioneX;
     private int inclinazioneY;
     
@@ -18,6 +19,7 @@ public class DatiCondivisi {
         barca = b1;
         inclinazioneX = 0;
         inclinazioneY = 0;
+        velocitaBarca = 0f;
     }
     
     public void incrementaInclinazioneX(){

@@ -12,12 +12,12 @@ package barcaNellaVasca;
 public class Barchetta {
     private float[] puntiX;
     private float[] puntiY;
-    private float velocita;
+    private DatiCondivisi d;
     
-    public Barchetta(float[] puntiX, float[] puntiY){
+    public Barchetta(float[] puntiX, float[] puntiY, DatiCondivisi d){
         this.puntiX = puntiX;
         this.puntiY = puntiY;
-        velocita = 0;        
+        this.d = d;     
     }
     
 }
