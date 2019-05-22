@@ -5,118 +5,48 @@
  */
 package barcaNellaVasca;
 
-import javafx.scene.shape.Box;
-import processing.core.PApplet;
-
-import java.awt.*;
-
 /**
  *
- * @author Rairokul
+ * @author Mauri Davide
  */
 public class Vasca {
-
-    private final PApplet processingSketch;
+    private float[] puntiX;
+    private float[] puntiY;
     private Acqua acqua;
-    private Barca barca;
-
-    private Box dimensione;
-    private Point posizione;
-
-    private float inclinazioneX;
-    private float inclinazioneY;
-
-    private DatiCondivisi d;
-
-    public Vasca(PApplet processingSketch) {
-        this.processingSketch = processingSketch;
-        dimensione = new Box();
-        dimensione.setDepth(100);
-        dimensione.setHeight(500);
-
-        posizione = new Point(200, 200);
-
-        acqua = new Acqua();
-
-        barca = new Barca(this.processingSketch, this.posizione);
-        barca.mostraBarca();
+    private boolean hasTheBall;
+    
+    public Vasca(int numeroScatola, int numeroRiga){
+        puntiX = new float[4];
+        inizX(numeroScatola);
+        puntiY = new float[4];
+        inizY(numeroRiga);
+        if(numeroScatola == 0 && numeroRiga == 0){
+            acqua = new Acqua();
+            hasTheBall = true;
+        }
+        
     }
-
-    public Vasca(PApplet processingSketch, Point posizione) {
-        this.processingSketch = processingSketch;
-        dimensione = new Box();
-        dimensione.setWidth(100);
-        dimensione.setDepth(100);
-        dimensione.setHeight(50);
-        this.posizione = posizione;
-        acqua = new Acqua(10); //quantità di acqua
-        barca = new Barca(this.processingSketch, this.posizione);
-        barca.mostraBarca();
-        inclinazioneX = 0;
-        inclinazioneY = 0;
+    
+    public void inizX(int numeroScatola){
+        puntiX[0] = 10 + (90 * (float)numeroScatola);
+        puntiX[1] = 10 + 90 + (90 * (float)numeroScatola);
+        puntiX[2] = 10 + 90 + (90 * (float)numeroScatola);
+        puntiX[3] = 10 + (90 * (float)numeroScatola);
     }
-
-    public Vasca(PApplet processingSketch, Box dimensione, Point posizione, Acqua acqua, Barca barca) {
-        this.processingSketch = processingSketch;
-        this.dimensione = dimensione;
-        this.posizione = posizione;
-        this.acqua = acqua;
-        this.barca = barca;
-        inclinazioneX = 0;
-        inclinazioneY = 0;
-        barca = new Barca(this.processingSketch, this.posizione);
-        barca.mostraBarca();
+    
+    public void inizY(int numeroRiga){
+        puntiY[0] = 10 + (90 * numeroRiga);
+        puntiY[1] = 10 + (90 * numeroRiga);
+        puntiY[2] = 10 + 90 + (90 * numeroRiga);
+        puntiY[3] = 10 + 90 + (90 * numeroRiga);
     }
-
-    public void spostaAcquaInAltraVasca(float altezza, Vasca altra) {
-        altra.acqua.aumentaQuantità(altezza);
-        acqua.diminuisciQuantità(altezza);
+    
+    public float[] getPuntiX(){
+        return puntiX;
     }
-
-    public Acqua getAcqua() {
-        return acqua;
+    
+    public float[] getPuntiY(){
+        return puntiY;
     }
-
-    public Box getDimensione() {
-        return dimensione;
-    }
-
-    public Barca getPallina() {
-        return barca;
-    }
-
-    public Point getPosizione() {
-        return posizione;
-    }
-
-    public float getInclinazioneX() {
-        return inclinazioneX;
-    }
-
-    public float getInclinazioneY() {
-        return inclinazioneY;
-    }
-
-    void aggiornaPosBarca(Barca barca, float newX, float newY) {
-
-    }
-
-    void draw() {
-        processingSketch.fill(processingSketch.color(240, 0, 0));
-        processingSketch.rect(posizione.x, posizione.y, (float) dimensione.getWidth(), (float) dimensione.getDepth());
-
-        barca.draw();
-
-        processingSketch.noFill();
-        processingSketch.stroke(0, 0, 0);
-        processingSketch.rect(posizione.x, posizione.y, (float) dimensione.getWidth(), (float) dimensione.getDepth());
-    }
-
-    public void setInclinazioneX(float inclinazioneX) {
-        this.inclinazioneX = inclinazioneX;
-    }
-
-    public void setInclinazioneY(float inclinazioneY) {
-        this.inclinazioneY = inclinazioneY;
-    }
+    
 }

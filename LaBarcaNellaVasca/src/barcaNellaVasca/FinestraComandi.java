@@ -23,6 +23,8 @@ public class FinestraComandi {
     private JFrame frame;
     
     public FinestraComandi(DatiCondivisi d){
+        frame = new JFrame("Controlli");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel controls = new JPanel();
         controls.setLayout(new FlowLayout());
         
