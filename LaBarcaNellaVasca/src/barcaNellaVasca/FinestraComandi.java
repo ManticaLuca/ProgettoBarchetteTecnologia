@@ -5,9 +5,6 @@ package barcaNellaVasca;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,14 +17,15 @@ import javax.swing.JPanel;
  * @author Davide Mauri
  */
 public class FinestraComandi {
+
     private JFrame frame;
-    
-    public FinestraComandi(DatiCondivisi d){
+
+    public FinestraComandi(DatiCondivisi d) {
         frame = new JFrame("Controlli");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel controls = new JPanel();
         controls.setLayout(new FlowLayout());
-        
+
         JButton incAscissa = new JButton("X++");
         incAscissa.addActionListener(new ActionListener() {
 
@@ -44,38 +42,35 @@ public class FinestraComandi {
                 d.decrementaInclinazioneX();
             }
         });
-            
-        
+
         JButton decOrdinata = new JButton("Y--");
-        decOrdinata.addActionListener(new ActionListener(){
+        decOrdinata.addActionListener(new ActionListener() {
             @Override
-             public void actionPerformed(ActionEvent e){
-            d.decrementaInclinazioneY();
-        }        
+            public void actionPerformed(ActionEvent e) {
+                d.decrementaInclinazioneY();
+            }
         });
-        
+
         JButton incOrdinata = new JButton("Y++");
-        incOrdinata.addActionListener(new ActionListener(){
+        incOrdinata.addActionListener(new ActionListener() {
             @Override
-             public void actionPerformed(ActionEvent e){
-            d.incrementaInclinazioneY();
-        }        
+            public void actionPerformed(ActionEvent e) {
+                d.incrementaInclinazioneY();
+            }
         });
-        
+
         controls.add(incAscissa);
         controls.add(decAscissa);
         controls.add(decOrdinata);
         controls.add(incOrdinata);
-        
+
         frame.add(controls);
-        frame.setSize(400,200);
-        
+        frame.setSize(300, 80);
+
     }
-    
-    public void show(){
+
+    public void show() {
         frame.setVisible(true);
     }
-    
-    
-    
+
 }

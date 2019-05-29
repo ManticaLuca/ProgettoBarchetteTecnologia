@@ -9,20 +9,21 @@ package barcaNellaVasca;
  *
  * @author Davide Mauri
  */
-public class thBarchetta extends Thread{
+public class thBarchetta extends Thread {
+
     private Barchetta b;
-    
-    public thBarchetta(Barchetta b){
+
+    public thBarchetta(Barchetta b) {
         this.b = b;
     }
-    
-    public void run(){
-        try{
-            while(true){
+
+    public void run() {
+        try {
+            while (true) {
                 b.move();
                 sleep(10);
             }
-        }catch(InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println(e);
         }
     }

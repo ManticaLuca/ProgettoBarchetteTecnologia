@@ -13,8 +13,8 @@ public class Acqua {
 
     private Color colore;
     private int quantita;
-    
-    public Acqua(){
+
+    public Acqua() {
         colore = new Color(0, 0, 255);
         quantita = 255;
     }
